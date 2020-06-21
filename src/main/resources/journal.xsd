@@ -1,0 +1,52 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ropierce.umich.edu/cs571/journal-service"
+           targetNamespace="http://ropierce.umich.edu/cs571/journal-service" elementFormDefault="qualified">
+
+    <xs:element name="getJournalRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tripId" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getJournalResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="journal" type="tns:journal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addJournalEntryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="journalAddition" type="tns:journalAddition"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addJournalEntryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="journal" type="tns:journal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="journal">
+        <xs:sequence>
+            <xs:element name="tripId" type="xs:integer"/>
+            <xs:element name="creationDate" type="xs:dateTime"/>
+            <xs:element name="lastUpdateDate" type="xs:dateTime"/>
+            <xs:element name="contents" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="journalAddition">
+        <xs:sequence>
+            <xs:element name="tripId" type="xs:integer"/>
+            <xs:element name="contents" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
