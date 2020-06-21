@@ -2,7 +2,7 @@
 
 Small SOAP service created as part of my CIS-571 Web Services class at University of Michigan - Dearborn. 
 
-Service contains SOAP endpoints to
+SOAP endpoints:
 
 ### addJournal
 Travel journal for entering notes, confirmation #s, etc.
